@@ -333,7 +333,7 @@ spec:
       app.kubernetes.io/name: ingress-nginx
       app.kubernetes.io/instance: ingress-nginx
       app.kubernetes.io/component: controller
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 10
   minReadySeconds: 0
   template:
