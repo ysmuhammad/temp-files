@@ -458,7 +458,7 @@ metadata:
     app.kubernetes.io/version: "1.0.4"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
-  name: ingress-nginx-admission
+  name: ingress-nginx-admission-nlb
 webhooks:
   - name: validate.nginx.ingress.kubernetes.io
     matchPolicy: Equivalent
