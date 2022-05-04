@@ -27,6 +27,11 @@ metadata:
   name: ingress-nginx-controller
   namespace: ingress-nginx-nlb
 data:
+  allow-snippet-annotations: "true"
+  enable-brotli: "true"
+  hsts: "true"
+  hsts-include-subdomains: "true"
+  hsts-max-age: "63072000"
   http-snippet: |
     server {
       listen 18080;
@@ -38,18 +43,13 @@ data:
         return 404;
       }
     }
-  allow-snippet-annotations: "true"
-  use-forwarded-headers: "true"
-  enable-brotli: "true"
-  hsts: "true"
-  hsts-include-subdomains: "true"
-  hsts-max-age: "63072000"
   server-tokens: "false"
   ssl-ciphers: ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
   ssl-protocols: TLSv1.2 TLSv1.3
   ssl-session-cache: "true"
   ssl-session-cache-size: 20m
   ssl-session-tickets: "false"
+  use-forwarded-headers: "true"
   # use-proxy-protocol: "true"
 ---
 # Source: ingress-nginx/templates/clusterrole.yaml
