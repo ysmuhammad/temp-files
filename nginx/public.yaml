@@ -290,7 +290,8 @@ metadata:
   name: ingress-nginx-controller
   namespace: ingress-nginx-nlb
 spec:
-  externalTrafficPolicy: Local
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
   type: LoadBalancer
   ipFamilyPolicy: SingleStack
   ipFamilies:
