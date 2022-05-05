@@ -402,7 +402,7 @@ spec:
               cpu: 100m
               memory: 90Mi
       nodeSelector:
-        kubernetes.io/os: linux
+        nodegroup: ondemand
       serviceAccountName: ingress-nginx
       terminationGracePeriodSeconds: 300
       volumes:
