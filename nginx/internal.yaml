@@ -339,7 +339,7 @@ spec:
             - /nginx-ingress-controller
             - --publish-service=$(POD_NAMESPACE)/ingress-nginx-controller
             - --election-id=ingress-controller-leader
-            - --controller-class=k8s.io/nginx-internal
+            - --controller-class=k8s.io/nginx-internal-nlb
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
             - --validating-webhook=:8443
             - --validating-webhook-certificate=/usr/local/certificates/cert
@@ -423,9 +423,9 @@ metadata:
     app.kubernetes.io/version: "1.0.4"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
-  name: nginx-internal
+  name: nginx-internal-nlb
 spec:
-  controller: k8s.io/nginx-internal
+  controller: k8s.io/nginx-internal-nlb
 ---
 # Source: ingress-nginx/templates/admission-webhooks/validating-webhook.yaml
 # before changing this value, check the required kubernetes version
